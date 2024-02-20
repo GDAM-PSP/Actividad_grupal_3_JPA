@@ -2,13 +2,14 @@ package modelo.persistencia;
 
 import java.util.List;
 
-import modelo.entidad.Libreria;
-import modelo.persistencia.interfaces.DaoLibreria;
+import modelo.entidad.Editorial;
+import modelo.persistencia.interfaces.DaoEditorial;
 
-public class DaoLibreriaJPA implements DaoLibreria{
+public class DaoEditorialJPA implements DaoEditorial{
 
 	@Override
-	public int insertar(Libreria l) {
+	public int insertar(Editorial e) {
+		// TODO Auto-generated method stub
 		return 0;
 	}
 
@@ -19,19 +20,19 @@ public class DaoLibreriaJPA implements DaoLibreria{
 	}
 
 	@Override
-	public Libreria modificar(Libreria l) {
+	public Editorial modificar(Editorial e) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Libreria buscar(int id) {
+	public Editorial buscar(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Libreria> listar() {
+	public List<Editorial> listar() {
 		// TODO Auto-generated method stub
 		return null;
 	}
