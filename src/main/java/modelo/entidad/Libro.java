@@ -1,5 +1,6 @@
 package modelo.entidad;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -33,9 +34,9 @@ public class Libro {
 	
 	@ManyToMany(cascade=CascadeType.PERSIST)
     @JoinTable(name="librerias_libro",
-                joinColumns = {@JoinColumn(name="fk_id_libro")},
+                joinColumns = {@JoinColumn(name="fk_id_libro", referencedColumnName="id")},
                 inverseJoinColumns = {@JoinColumn(name="fk_id_libreria", referencedColumnName="id")})
-    private List<Libreria> libreria; // Corrección en el nombre de la propiedad
+    private List<Libreria> libreria = new ArrayList<>(); // Corrección en el nombre de la propiedad
 
 
 	public Libro(int id, String nombre, double precio, Editorial editorial, Autor autor, List<Libreria> libreria) {
@@ -50,6 +51,12 @@ public class Libro {
 
 	
 
+	public Libro() {
+		super();
+	}
+
+
+
 	public void setLibreria(List<Libreria> libreria) {
 		this.libreria = libreria;
 	}
@@ -57,11 +64,7 @@ public class Libro {
 	public List<Libreria> getLibreria() {
 		return libreria;
 	}
-
-	public Libro() {
-		super();
-	}
-
+	
 	public int getId() {
 		return id;
 	}

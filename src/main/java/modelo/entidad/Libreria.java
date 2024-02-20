@@ -1,5 +1,6 @@
 package modelo.entidad;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -20,7 +21,7 @@ public class Libreria {
 	private String nombreDueno;
 	private String direccion;
 	@ManyToMany(mappedBy="libreria", cascade=CascadeType.PERSIST)
-	private List<Libro> libros;
+	private List<Libro> libros = new ArrayList<>();
 	
 	public Libreria(int id, String nombre, String nombreDueno, String direccion, List<Libro> libros) {
 		super();

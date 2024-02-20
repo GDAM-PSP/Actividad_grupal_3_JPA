@@ -82,8 +82,7 @@ public class Autor {
 
 	@Override
 	public String toString() {
-		return "Autor [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", fecha=" + fecha + ", libro="
-				+ libro + "]";
+		return "Autor [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", fecha="+fecha+"]";
 	}
 	
 	

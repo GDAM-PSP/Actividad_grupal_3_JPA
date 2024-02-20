@@ -42,8 +42,11 @@ public class DaoAutorJPA implements DaoAutor{
 
 	@Override
 	public Autor buscar(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		em = manejador.abrirConexion(em);
+		if(em == null) {
+			return null;
+		}
+		return em.find(Autor.class, id);
 	}
 
 	@Override
