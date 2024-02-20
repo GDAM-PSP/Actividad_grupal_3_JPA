@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
@@ -20,8 +22,13 @@ public class Libreria {
 	private String nombre;
 	private String nombreDueno;
 	private String direccion;
-	@ManyToMany(mappedBy="libreria", cascade=CascadeType.PERSIST)
-	private List<Libro> libros = new ArrayList<>();
+	@ManyToMany(cascade=CascadeType.PERSIST)
+    @JoinTable(
+        name="librerias_libro",
+        joinColumns= @JoinColumn(name="fk_id_libreria", referencedColumnName="id"),
+        inverseJoinColumns=@JoinColumn(name="fk_id_libro", referencedColumnName="id")
+    )
+    private List<Libro> libros = new ArrayList<>();
 	
 	public Libreria(int id, String nombre, String nombreDueno, String direccion, List<Libro> libros) {
 		super();
