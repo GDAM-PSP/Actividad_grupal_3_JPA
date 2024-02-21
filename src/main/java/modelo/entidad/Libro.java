@@ -24,14 +24,18 @@ public class Libro {
 	private String nombre;
 	private double precio;
 	
+	//relacion N 1 con editorial
 	@ManyToOne //(cascade=CascadeType.ALL)
     @JoinColumn(name="fk_id_editorial", referencedColumnName="id")
     private Editorial editorial;
 
+	//relacion N 1 con autor
 	@ManyToOne //(cascade=CascadeType.ALL)
 	@JoinColumn(name="fk_id_autor", referencedColumnName="id")
 	private Autor autor;
 	
+	
+	//Relacion muchos a muchos apoyada con una tabla intermedia llamada librerias_libro
 	@ManyToMany(cascade=CascadeType.PERSIST)
     @JoinTable(name="librerias_libro",
                 joinColumns = {@JoinColumn(name="fk_id_libro", referencedColumnName="id")},
@@ -105,11 +109,12 @@ public class Libro {
 		this.autor = autor;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "Libro [id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", editorial=" + editorial + ", autor="
-				+ autor + "]";
+		return "Libro [id=" + id + ", nombre=" + nombre + ", precio=" + precio + "]";
 	}
-	
+
 	
 }

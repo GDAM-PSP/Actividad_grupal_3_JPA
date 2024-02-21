@@ -21,9 +21,10 @@ public class Autor {
 	private int id;
 	private String nombre;
 	private String apellidos;
+	//Recoje la fecha en formato date ej: 1982-02-02
 	@Temporal(TemporalType.DATE)
 	private Date fecha;
-	
+	//Relacion a autor 1 N
 	@OneToMany(mappedBy="autor", cascade=CascadeType.ALL)
 	private List<Libro> libro;
 

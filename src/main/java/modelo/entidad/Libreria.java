@@ -22,6 +22,7 @@ public class Libreria {
 	private String nombre;
 	private String nombreDueno;
 	private String direccion;
+	//Relaciones de muchos a muchos con una tabla intermedia llamada librerias_libro
 	@ManyToMany(cascade=CascadeType.PERSIST)
     @JoinTable(
         name="librerias_libro",
@@ -72,6 +73,12 @@ public class Libreria {
 	}
 	public void setLibros(List<Libro> libros) {
 		this.libros = libros;
+	}
+
+	@Override
+	public String toString() {
+		return "Libreria [id=" + id + ", nombre=" + nombre + ", nombreDueno=" + nombreDueno + ", direccion=" + direccion
+				+ ", libros=" + libros + "]";
 	}
 	
 }

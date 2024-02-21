@@ -11,7 +11,8 @@ public class DaoAutorJPA implements DaoAutor{
 	
 	private DaoManejador manejador = new DaoManejador();
 	private EntityManager em;
-	
+
+	//metodo para instertar autores 
 	@Override
 	public int insertar(Autor a) {
 		em = manejador.abrirConexion(em);
@@ -39,7 +40,7 @@ public class DaoAutorJPA implements DaoAutor{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	//Metodo de buscar datos
 	@Override
 	public Autor buscar(int id) {
 		em = manejador.abrirConexion(em);

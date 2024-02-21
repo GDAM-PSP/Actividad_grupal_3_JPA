@@ -14,6 +14,7 @@ public class DaoLibreriaJPA implements DaoLibreria{
 	private DaoManejador manejador = new DaoManejador();
 	private EntityManager em;
 	
+	//Metodo para insertar librerias
 	@Override
 	public int insertar(Libreria l) {
 	    em = manejador.abrirConexion(em);
@@ -59,7 +60,7 @@ public class DaoLibreriaJPA implements DaoLibreria{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	//Metodo para buscar libreria por id
 	@Override
 	public Libreria buscar(int id) {
 		em = manejador.abrirConexion(em);

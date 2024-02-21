@@ -12,6 +12,7 @@ public class DaoLibroJPA implements DaoLibro{
 	private DaoManejador manejador = new DaoManejador();
 	private EntityManager em;
 	
+	//metodo para insetar libro a la bbdd
 	@Override
 	public int insertar(Libro e) {
 		em = manejador.abrirConexion(em);
@@ -40,6 +41,7 @@ public class DaoLibroJPA implements DaoLibro{
 		return null;
 	}
 
+	//Metodo para buscar libro por id
 	@Override
 	public Libro buscar(int id) {
 	    EntityManager em = null;

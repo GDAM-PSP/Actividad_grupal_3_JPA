@@ -23,9 +23,13 @@ import modelo.persistencia.interfaces.DaoLibro;
 
 public class DatosIniciales {
 	public static void Iniciacion() {
+			//Este metodo crea por defecto 3 autores en la bbdd
 			crearAutor();
+			//Este metodo crea por defecto 2 editoriales en la bbdd
 			crearEditorial();
+			//Este metodo crea por defecto 8 libros que asocia a 1 atutor creado anteriormente en la bbdd
 			crearLibros();
+			//Este metodo crea por defecto 2 librerias y asocia 4 libros en la bbdd
 			crearLibreria();
 		
 	}
@@ -146,6 +150,8 @@ public class DatosIniciales {
 		editorial.setDireccion("Nueva York,Estados Unidos");
 		daoEditorial.insertar(editorial);
 	}
+	
+	//Este metodo ajusta la fecha del metodo DATE
 	public static Date crearFecha(int anio, int mes, int dia) {
         Calendar cal = Calendar.getInstance();
         cal.set(anio, mes - 1, dia); // Los meses en Calendar están indexados desde 0

@@ -12,6 +12,7 @@ public class DaoEditorialJPA implements DaoEditorial{
 	private DaoManejador manejador = new DaoManejador();
 	private EntityManager em;
 	
+	//metodo de insertar Editoriales
 	@Override
 	public int insertar(Editorial e) {
 		em = manejador.abrirConexion(em);
@@ -38,7 +39,7 @@ public class DaoEditorialJPA implements DaoEditorial{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	//Metodo para buscar editoriales
 	@Override
 	public Editorial buscar(int id) {
 		em = manejador.abrirConexion(em);

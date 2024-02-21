@@ -19,6 +19,7 @@ public class Editorial {
 	private int id;
 	private String nombre;
 	private String direccion;
+	//relacion 1 N con editorial
 	@OneToMany(mappedBy="editorial", cascade=CascadeType.ALL)
 	private List<Libro> libro;
 	public Editorial(int id, String nombre, String direccion, List<Libro> libro) {
@@ -54,6 +55,10 @@ public class Editorial {
 	}
 	public void setLibro(List<Libro> libro) {
 		this.libro = libro;
+	}
+	@Override
+	public String toString() {
+		return "Editorial [id=" + id + ", nombre=" + nombre + ", direccion=" + direccion + ", libro=" + libro + "]";
 	}
 	
 	
