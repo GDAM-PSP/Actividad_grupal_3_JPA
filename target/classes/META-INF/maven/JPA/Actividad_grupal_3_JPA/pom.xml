@@ -22,6 +22,11 @@
 			   <groupId>org.hibernate.orm</groupId>
 			   <artifactId>hibernate-core</artifactId>
 			   <version>6.3.2.Final</version>
-		</dependency>			
+		</dependency>
+		<dependency>
+			<groupId>es.unir.fp</groupId>
+			<artifactId>AD_Laboratorio</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>
