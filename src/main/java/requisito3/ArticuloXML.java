@@ -15,7 +15,7 @@ public class ArticuloXML {
 		JAXBContext contexto;
 		
 		try {
-			contexto = JAXBContext.newInstance(Articulo.class);
+			contexto = JAXBContext.newInstance(ArrayArticulos.class);
 		} catch (JAXBException e) {
 			System.out.println("Error creando el contexto");
 			System.out.println(e.getMessage());
@@ -29,13 +29,15 @@ public class ArticuloXML {
 			m = contexto.createMarshaller();
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-			 List<Articulo> listaArticulos = new ArrayList<>();
-		     listaArticulos.add(new Articulo(1, "Ordenador", "portatil HP 15s-fq5060ns", 10, 659.0));
-		     listaArticulos.add(new Articulo(2, "Móvil", "Samsung Galaxy S24 ultra 12 + 512GB", 20, 1579.0 ));
-		     listaArticulos.add(new Articulo(3, "Monitor", "Phillips B-Line 278B1" , 30,199.99));
+			 ArrayArticulos articulos = new ArrayArticulos();
+		     articulos.getArticulos().add(new Articulo(1, "Ordenador", "portatil HP 15s-fq5060ns", 10, 659.0));
+		     articulos.getArticulos().add(new Articulo(2, "Móvil", "Samsung Galaxy S24 ultra 12 + 512GB", 20, 1579.0 ));
+		     articulos.getArticulos().add(new Articulo(3, "Monitor", "Phillips B-Line 278B1" , 30,199.99));
 		     
-		     m.marshal(listaArticulos, System.out);
-			 m.marshal(listaArticulos, new File("articulos.xml"));
+		     
+		     m.marshal(articulos, System.out);
+			 m.marshal(articulos, new File("articulos.xml"));
+			 
 		     
 		}catch(JAXBException e) {
 			System.out.println("Error en la conversión a XML");
