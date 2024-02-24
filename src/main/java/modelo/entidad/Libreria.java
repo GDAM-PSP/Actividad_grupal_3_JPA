@@ -22,6 +22,7 @@ public class Libreria {
 	private String nombre;
 	private String nombreDueno;
 	private String direccion;
+	
 	//Relaciones de muchos a muchos con una tabla intermedia llamada librerias_libro
 	@ManyToMany(cascade=CascadeType.PERSIST)
     @JoinTable(
@@ -29,6 +30,7 @@ public class Libreria {
         joinColumns= @JoinColumn(name="fk_id_libreria", referencedColumnName="id"),
         inverseJoinColumns=@JoinColumn(name="fk_id_libro", referencedColumnName="id")
     )
+	
     private List<Libro> libros = new ArrayList<>();
 	
 	public Libreria(int id, String nombre, String nombreDueno, String direccion, List<Libro> libros) {
@@ -47,30 +49,39 @@ public class Libreria {
 	public int getId() {
 		return id;
 	}
+	
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 	public String getNombre() {
 		return nombre;
 	}
+	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	
 	public String getNombreDueno() {
 		return nombreDueno;
 	}
+	
 	public void setNombreDueno(String nombreDueno) {
 		this.nombreDueno = nombreDueno;
 	}
+	
 	public String getDireccion() {
 		return direccion;
 	}
+	
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
+	
 	public List<Libro> getLibros() {
 		return libros;
 	}
+	
 	public void setLibros(List<Libro> libros) {
 		this.libros = libros;
 	}
@@ -80,5 +91,4 @@ public class Libreria {
 		return "Libreria [id=" + id + ", nombre=" + nombre + ", nombreDueno=" + nombreDueno + ", direccion=" + direccion
 				+ ", libros=" + libros + "]";
 	}
-	
 }

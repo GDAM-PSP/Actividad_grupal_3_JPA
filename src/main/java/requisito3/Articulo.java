@@ -20,9 +20,7 @@ import javax.xml.bind.annotation.XmlType;
 	    "precio"
 	})
 public class Articulo implements Serializable{
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	private int id;
 	private String nombre;
@@ -47,44 +45,50 @@ public class Articulo implements Serializable{
 	public int getId() {
 		return id;
 	}
+	
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 	@XmlElement
 	public String getNombre() {
 		return nombre;
 	}
+	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	
 	@XmlElement
 	public String getDescripcion() {
 		return descripcion;
 	}
+	
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+	
 	@XmlElement
 	public int getCantidad() {
 		return cantidad;
 	}
+	
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
+	
 	@XmlElement
 	public double getPrecio() {
 		return precio;
 	}
+	
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
 	
-
 	@Override
 	public String toString() {
 		return "Articulo [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", cantidad=" + cantidad
 				+ ", precio=" + precio + "]";
 	}
-	
-	
 }

@@ -1,4 +1,4 @@
-package Requisito2_Nestor.modelo.entidad;
+package requisito2_Nestor.modelo.entidad;
 
 import java.util.List;
 
