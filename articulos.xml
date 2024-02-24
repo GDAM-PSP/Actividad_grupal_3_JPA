@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ferreteria>
+    <articulos>
+        <articulo id="1">
+            <nombre>Ordenador</nombre>
+            <descripcion>portatil HP 15s-fq5060ns</descripcion>
+            <cantidad>10</cantidad>
+            <precio>659.0</precio>
+        </articulo>
+        <articulo id="2">
+            <nombre>Móvil</nombre>
+            <descripcion>Samsung Galaxy S24 ultra 12 + 512GB</descripcion>
+            <cantidad>20</cantidad>
+            <precio>1579.0</precio>
+        </articulo>
+        <articulo id="3">
+            <nombre>Monitor</nombre>
+            <descripcion>Phillips B-Line 278B1</descripcion>
+            <cantidad>30</cantidad>
+            <precio>199.99</precio>
+        </articulo>
+    </articulos>
+</ferreteria>

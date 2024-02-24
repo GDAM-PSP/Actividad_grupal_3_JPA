@@ -1,9 +1,11 @@
 package requisito3;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -33,7 +35,7 @@ public class Articulo implements Serializable{
 	}
 	
 	public Articulo(int id, String nombre, String descripcion, int cantidad, double precio) {
-		super();
+		//super();
 		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
@@ -76,6 +78,7 @@ public class Articulo implements Serializable{
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
+	
 
 	@Override
 	public String toString() {
