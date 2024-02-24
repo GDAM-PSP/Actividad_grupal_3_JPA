@@ -17,15 +17,20 @@ public class Main {
 		System.out.println("------EMPIEZA--EL---PROGRAMA------");
 		//Crea las tablas con la bbdd y mete los datos en cada una de las tablas
 		DatosIniciales.Iniciacion();
-		//muestra los datos en la bbdd
+		//Muestra los datos en la bbdd
 		mostrarDatos();
 		System.out.println("------ACABA----EL---PROGRAMA------");
 	}
-	//muestra 4 consultas
+	
+	/**
+	 * 4 consultas JPQL
+	 */
+	@SuppressWarnings("unchecked")
 	public static void mostrarDatos() {
 		DaoManejador daoManejador = new DaoManejador();
 		em = daoManejador.abrirConexion(em);
-		//Query permite hacer consultas JPQL en este caso saca los libros
+		
+		//Sacamos los libros
 		Query query = em.createQuery("Select l From Libro l JOIN FETCH l.editorial JOIN FETCH l.autor");
 		List<Libro> listLibros = query.getResultList();
 		for(Libro l : listLibros) {
@@ -34,7 +39,8 @@ public class Main {
 		}
 		em.close();
 		em = daoManejador.abrirConexion(em);
-		//Query permite hacer consultas JPQL en este caso saca el autor con sus libros
+		
+		//Sacamos el autor con sus libros
 		Query query2 = em.createQuery("Select a From Autor a JOIN FETCH a.libro ");
 		List<Autor> listAutor = query2.getResultList();
 		for(Autor l : listAutor) {
@@ -48,7 +54,8 @@ public class Main {
 		}
 		em.close();
 		em = daoManejador.abrirConexion(em);
-		//Query permite hacer consultas JPQL en este caso saca los libros de cada libreria asociadas
+		
+		//Sacamos los libros de cada libreria asociadas
 		Query query3 = em.createQuery("Select l From Libreria l JOIN FETCH l.libros");
 		List<Libreria> listLibreria= query3.getResultList();
 		for(Libreria l : listLibreria) {
@@ -62,7 +69,8 @@ public class Main {
 		}
 		em.close();
 		em = daoManejador.abrirConexion(em);
-		//Query permite hacer consultas JPQL en este caso saca los libros y sus librerias
+		
+		//Sacamos los libros y sus librerias
 		Query query4 = em.createQuery("Select l From Libro l JOIN FETCH l.libreria");
 		listLibros= query4.getResultList();
 		for(Libro l : listLibros) {

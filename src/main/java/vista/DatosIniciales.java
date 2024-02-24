@@ -1,13 +1,8 @@
 package vista;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
 import modelo.entidad.Autor;
 import modelo.entidad.Editorial;
 import modelo.entidad.Libreria;
@@ -23,16 +18,15 @@ import modelo.persistencia.interfaces.DaoLibro;
 
 public class DatosIniciales {
 	public static void Iniciacion() {
-			//Este metodo crea por defecto 3 autores en la bbdd
 			crearAutor();
-			//Este metodo crea por defecto 2 editoriales en la bbdd
 			crearEditorial();
-			//Este metodo crea por defecto 8 libros que asocia a 1 atutor creado anteriormente en la bbdd
 			crearLibros();
-			//Este metodo crea por defecto 2 librerias y asocia 4 libros en la bbdd
 			crearLibreria();
-		
 	}
+	
+	/**
+	 * Crea por defecto 2 librerias y asocia 4 libros en la bbdd
+	 */
 	public static void crearLibreria() {
 		DaoLibreria daoLibreria = new DaoLibreriaJPA();
 		DaoLibro daoLibro = new DaoLibroJPA();
@@ -56,6 +50,10 @@ public class DatosIniciales {
 		libreria.setNombreDueno("Paco Diaz");
 		daoLibreria.insertar(libreria);
 	}
+	
+	/**
+	 * Crea por defecto 8 libros que asocia a 1 atutor creado anteriormente en la bbdd
+	 */
 	public static void crearLibros() {
 		DaoAutor daoAutor = new DaoAutorJPA();
 		DaoEditorial daoEditorial = new DaoEditorialJPA();
@@ -116,6 +114,10 @@ public class DatosIniciales {
 		libro.setEditorial(daoEditorial.buscar(1));
 		daoLibro.insertar(libro);
 	}
+	
+	/**
+	 * Crea por defecto 3 autores en la bbdd
+	 */
 	public static void crearAutor() {
 		DaoAutor daoAutor = new DaoAutorJPA();
 		Autor autor = new Autor();
@@ -138,6 +140,10 @@ public class DatosIniciales {
 		autor.setFecha(crearFecha(1996,5,29));
 		daoAutor.insertar(autor);
 	}
+	
+	/**
+	 * Crea por defecto 2 editoriales en la bbdd
+	 */
 	public static void crearEditorial() {
 		DaoEditorial daoEditorial = new DaoEditorialJPA();
 		Editorial editorial = new Editorial();
@@ -151,7 +157,13 @@ public class DatosIniciales {
 		daoEditorial.insertar(editorial);
 	}
 	
-	//Este metodo ajusta la fecha del metodo DATE
+	/**
+	 * Este metodo ajusta la fecha del metodo DATE
+	 * @param anio
+	 * @param mes
+	 * @param dia
+	 * @return
+	 */
 	public static Date crearFecha(int anio, int mes, int dia) {
         Calendar cal = Calendar.getInstance();
         cal.set(anio, mes - 1, dia); // Los meses en Calendar están indexados desde 0

@@ -4,10 +4,14 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-//Esta clase maneja la conexion JPA con el manejador
+/*
+ * Esta clase maneja la conexion JPA con el manejador
+ */
 public class DaoManejador {
 	
-	//se le pasa el objeto EntityManager y abre la conexion
+	/*
+	 * Se le pasa el objeto EntityManager y abre la conexion
+	 */
 	public EntityManager abrirConexion(EntityManager em) {
 		try {
 		EntityManagerFactory factoria = Persistence.createEntityManagerFactory("JPAlibreria");
@@ -17,7 +21,9 @@ public class DaoManejador {
 			return null;
 		}
 	}
-	//se le pasa el objeto EntityManager y cierra la conexion
+	/*
+	 * Se le pasa el objeto EntityManager y cierra la conexion
+	 */
 	public boolean cerrarConexion(EntityManager em) {
 		try {
 			em.close();

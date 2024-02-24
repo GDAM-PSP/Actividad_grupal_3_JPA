@@ -19,9 +19,11 @@ public class Editorial {
 	private int id;
 	private String nombre;
 	private String direccion;
-	//relacion 1 N con editorial
+	
+	//Relacion 1 N con editorial
 	@OneToMany(mappedBy="editorial", cascade=CascadeType.ALL)
 	private List<Libro> libro;
+	
 	public Editorial(int id, String nombre, String direccion, List<Libro> libro) {
 		super();
 		this.id = id;
@@ -29,37 +31,45 @@ public class Editorial {
 		this.direccion = direccion;
 		this.libro = libro;
 	}
+	
 	public Editorial() {
 		super();
 	}
+	
 	public int getId() {
 		return id;
 	}
+	
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 	public String getNombre() {
 		return nombre;
 	}
+	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	
 	public String getDireccion() {
 		return direccion;
 	}
+	
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
+	
 	public List<Libro> getLibro() {
 		return libro;
 	}
+	
 	public void setLibro(List<Libro> libro) {
 		this.libro = libro;
 	}
+	
 	@Override
 	public String toString() {
 		return "Editorial [id=" + id + ", nombre=" + nombre + ", direccion=" + direccion + ", libro=" + libro + "]";
 	}
-	
-	
 }

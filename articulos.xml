@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ferreteria>
+<informatica>
     <articulos>
         <articulo id="1">
             <nombre>Ordenador</nombre>
@@ -20,4 +20,4 @@
             <precio>199.99</precio>
         </articulo>
     </articulos>
-</ferreteria>
+</informatica>
