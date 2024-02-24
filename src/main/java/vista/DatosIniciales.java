@@ -42,7 +42,7 @@ public class DatosIniciales {
 		libreria.getLibros().add(daoLibro.buscar(3));
 		libreria.getLibros().add(daoLibro.buscar(4));
 		libreria.setDireccion("Barcelona, España");
-		libreria.setNombre("Librería El Dorado");
+		libreria.setNombre("Librería Gigamesh");
 		libreria.setNombreDueno("Pepe alonso");
 		daoLibreria.insertar(libreria);
 		
@@ -51,8 +51,8 @@ public class DatosIniciales {
 		libreria.getLibros().add(daoLibro.buscar(6));
 		libreria.getLibros().add(daoLibro.buscar(7));
 		libreria.getLibros().add(daoLibro.buscar(8));
-		libreria.setDireccion("Los Ángeles, Estados Unidos");
-		libreria.setNombre("Book Haven");
+		libreria.setDireccion("Málaga, España");
+		libreria.setNombre("Gigamesh");
 		libreria.setNombreDueno("Paco Diaz");
 		daoLibreria.insertar(libreria);
 	}
@@ -61,93 +61,93 @@ public class DatosIniciales {
 		DaoEditorial daoEditorial = new DaoEditorialJPA();
 		DaoLibro daoLibro = new DaoLibroJPA();
 		Libro libro = new Libro();
-		libro.setNombre("El secreto del faro");
+		libro.setNombre("El imperio final");
 		libro.setPrecio(22.5);
 		libro.setAutor(daoAutor.buscar(1));
 		libro.setEditorial(daoEditorial.buscar(1));
 		daoLibro.insertar(libro);
 		
 		libro = new Libro();
-		libro.setNombre("The Silent Forest");
-		libro.setPrecio(29.5);
+		libro.setNombre("La voz de las espadas");
+		libro.setPrecio(18.5);
 		libro.setAutor(daoAutor.buscar(2));
 		libro.setEditorial(daoEditorial.buscar(2));
 		daoLibro.insertar(libro);
 		
 		libro = new Libro();
-		libro.setNombre("Destino incierto");
-		libro.setPrecio(12.5);
+		libro.setNombre("La guerra de la amapola");
+		libro.setPrecio(22.95);
 		libro.setAutor(daoAutor.buscar(3));
-		libro.setEditorial(daoEditorial.buscar(1));
-		daoLibro.insertar(libro);
-		
-		libro = new Libro();
-		libro.setNombre("Echoes of the Past");
-		libro.setPrecio(30);
-		libro.setAutor(daoAutor.buscar(1));
 		libro.setEditorial(daoEditorial.buscar(2));
 		daoLibro.insertar(libro);
 		
 		libro = new Libro();
-		libro.setNombre("Infinite Horizons");
+		libro.setNombre("El camino de los reyes");
+		libro.setPrecio(33);
+		libro.setAutor(daoAutor.buscar(1));
+		libro.setEditorial(daoEditorial.buscar(1));
+		daoLibro.insertar(libro);
+		
+		libro = new Libro();
+		libro.setNombre("Un poco de odio");
 		libro.setPrecio(17.9);
 		libro.setAutor(daoAutor.buscar(2));
+		libro.setEditorial(daoEditorial.buscar(2));
+		daoLibro.insertar(libro);
+		
+		libro = new Libro();
+		libro.setNombre("Elantris");
+		libro.setPrecio(12.99);
+		libro.setAutor(daoAutor.buscar(1));
 		libro.setEditorial(daoEditorial.buscar(1));
 		daoLibro.insertar(libro);
 		
 		libro = new Libro();
-		libro.setNombre("Flor de loto");
-		libro.setPrecio(9.99);
+		libro.setNombre("Babel");
+		libro.setPrecio(29.99);
 		libro.setAutor(daoAutor.buscar(3));
 		libro.setEditorial(daoEditorial.buscar(2));
 		daoLibro.insertar(libro);
 		
 		libro = new Libro();
-		libro.setNombre("Under the Same Moon");
-		libro.setPrecio(49.99);
-		libro.setAutor(daoAutor.buscar(1));
-		libro.setEditorial(daoEditorial.buscar(2));
-		daoLibro.insertar(libro);
-		
-		libro = new Libro();
-		libro.setNombre("Lost in Translation");
+		libro.setNombre("El aliento de los dioses");
 		libro.setPrecio(10.99);
-		libro.setAutor(daoAutor.buscar(2));
+		libro.setAutor(daoAutor.buscar(1));
 		libro.setEditorial(daoEditorial.buscar(1));
 		daoLibro.insertar(libro);
 	}
 	public static void crearAutor() {
 		DaoAutor daoAutor = new DaoAutorJPA();
 		Autor autor = new Autor();
-		autor.setNombre("Ana");
-		autor.setApellidos("García");
-		autor.setFecha(crearFecha(1982,7,5));
+		autor.setNombre("Brandon");
+		autor.setApellidos("Sanderson");
+		autor.setFecha(crearFecha(1975,12,19));
 		daoAutor.insertar(autor);
 
 		daoAutor = new DaoAutorJPA();
 		autor = new Autor();
-		autor.setNombre("Michael");
-		autor.setApellidos("Johnson");
-		autor.setFecha(crearFecha(1979,3,12));
+		autor.setNombre("Joe");
+		autor.setApellidos("Abercrombie");
+		autor.setFecha(crearFecha(1974,12,31));
 		daoAutor.insertar(autor);
 		
 		daoAutor = new DaoAutorJPA();
 		autor = new Autor();
-		autor.setNombre("Li");
-		autor.setApellidos("Wei");
-		autor.setFecha(crearFecha(1990,11,5));
+		autor.setNombre("Rebecca");
+		autor.setApellidos("Kuang");
+		autor.setFecha(crearFecha(1996,5,29));
 		daoAutor.insertar(autor);
 	}
 	public static void crearEditorial() {
 		DaoEditorial daoEditorial = new DaoEditorialJPA();
 		Editorial editorial = new Editorial();
-		editorial.setNombre("Luna Editores");
+		editorial.setNombre("Nova");
 		editorial.setDireccion("Madrid,España");
 		daoEditorial.insertar(editorial);
 		
 		editorial = new Editorial();
-		editorial.setNombre("Stellar Press");
-		editorial.setDireccion("Nueva York,Estados Unidos");
+		editorial.setNombre("Alianza");
+		editorial.setDireccion("Barcelona, España");
 		daoEditorial.insertar(editorial);
 	}
 	
