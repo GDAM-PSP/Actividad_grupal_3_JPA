@@ -11,19 +11,19 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 
-@Entity
+//@Entity
 public class Trabajador {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@Id
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nombre;
 	private String puesto;
 
-	@OneToOne(mappedBy = "trabajador")
+//	@OneToOne(mappedBy = "trabajador")
 	private Trabajador hojaTrabajador;
 
-	@ManyToOne
-	@JoinColumn(name = "id_almacen")
+//	@ManyToOne
+//	@JoinColumn(name = "id_almacen")
 	private Almacen almacenEmpleado;
 
 	public int getId() {

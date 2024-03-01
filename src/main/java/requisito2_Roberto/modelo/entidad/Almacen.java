@@ -14,8 +14,8 @@ import requisito2_Daniel.modelo.entidad.Coche;
 import requisito2_Daniel.modelo.entidad.Vendedor;
 
 public class Almacen {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nombre;
 

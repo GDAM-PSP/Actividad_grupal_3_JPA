@@ -3,8 +3,8 @@ package modelo.entidad;
 import java.util.Date;
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -14,20 +14,20 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 @Entity
-@Table(name="autor")
+@Table(name = "autor")
 public class Autor {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nombre;
 	private String apellidos;
-	
-	//Recoje la fecha en formato date ej: 1982-02-02
+
+	// Recoje la fecha en formato date ej: 1982-02-02
 	@Temporal(TemporalType.DATE)
 	private Date fecha;
-	
-	//Relacion a autor 1 N
-	@OneToMany(mappedBy="autor", cascade=CascadeType.ALL)
+
+	// Relacion a autor 1 N
+	@OneToMany(mappedBy = "autor", cascade = CascadeType.ALL)
 	private List<Libro> libro;
 
 	public Autor(int id, String nombre, String apellidos, Date fecha, List<Libro> libro) {
@@ -85,6 +85,6 @@ public class Autor {
 
 	@Override
 	public String toString() {
-		return "Autor [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", fecha="+fecha+"]";
+		return "Autor [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", fecha=" + fecha + "]";
 	}
 }

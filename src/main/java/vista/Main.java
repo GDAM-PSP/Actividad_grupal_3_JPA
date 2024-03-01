@@ -31,6 +31,7 @@ public class Main {
 		em = daoManejador.abrirConexion(em);
 
 		// Sacamos los libros
+		System.out.println("******* CONSULTA 1 **********");
 		Query query = em.createQuery("Select l From Libro l JOIN FETCH l.editorial JOIN FETCH l.autor");
 		List<Libro> listLibros = query.getResultList();
 		for (Libro l : listLibros) {
@@ -41,6 +42,7 @@ public class Main {
 		em.close();
 		em = daoManejador.abrirConexion(em);
 
+		System.out.println("******* CONSULTA 2 **********");
 		// Sacamos el autor con sus libros
 		Query query2 = em.createQuery("Select a From Autor a JOIN FETCH a.libro ");
 		List<Autor> listAutor = query2.getResultList();
@@ -56,6 +58,7 @@ public class Main {
 		em.close();
 		em = daoManejador.abrirConexion(em);
 
+		System.out.println("******* CONSULTA 3 **********");
 		// Sacamos los libros de cada libreria asociadas
 		Query query3 = em.createQuery("Select l From Libreria l JOIN FETCH l.libros");
 		List<Libreria> listLibreria = query3.getResultList();
@@ -71,6 +74,7 @@ public class Main {
 		em.close();
 		em = daoManejador.abrirConexion(em);
 
+		System.out.println("******* CONSULTA 4 **********");
 		// Sacamos los libros y sus librerias
 		Query query4 = em.createQuery("Select l From Libro l JOIN FETCH l.libreria");
 		listLibros = query4.getResultList();
